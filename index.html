@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Location Map using JSON</title>
+	
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+html, body { height: 100%; margin: 0; padding: 0; font-family: sans-serif; }
+#map_canvas { height: 100%; }
+
+</style>
+<script src="jquery-1.12.3.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--    async defer>
+</script>-->
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCWvOPoH4j0ER7cg93PTeozY11Xb61cTg0"></script>
+
+</head>
+<body>
+<div id="main">
+	<div class="row">
+
+	<div class="row">	
+		<select id="groupBy">
+            <option value="">- Select -</option>
+            <option value="Country">Country</option>
+            <option value="City">City</option>           
+        </select>
+	</div>
+
+	</div>
+
+	<div class="hidden isCountry"><!--class name should be same with select option value-->
+		<div class="row" >				
+				<h1>Group By: Country</h1>
+				<div id="ma"></div>
+				<div id="sg"></div>
+				<div id="tl"></div>
+				<div id="vn"></div>			
+		</div>
+	</div>
+
+	<div class="hidden isCity"><!--class name should be same with select option value-->
+		<div class="row" >		
+			<h1>Group By: City</h1>
+			<div id="cityMA"></div>
+			<div id="citySG"></div>
+			<div id="cityTL"></div>
+			<div id="cityVN"></div>
+		</div>
+	</div>
+
+</div>
+
+<br /><br/>
+<div id="map_canvas"></div>
+
+
+</body>
+<script type="text/javascript" src="location.json"></script>
+<script type="text/javascript" src="script.js"></script>
+
+<script>
+//for Selection
+$("#groupBy").change(function(){          
+    var value = $("#groupBy option:selected").val(); // selecting the values inside the option selected
+    var theDiv = $(".is" + value);
+    
+    theDiv.slideDown().removeClass("hidden"); //remove class of hidden when slideDown
+    theDiv.siblings('[class*=is]').slideUp(function() { $(this).addClass("hidden"); }); // add class of hidden when slide up
+});
+
+</script>
+</html>

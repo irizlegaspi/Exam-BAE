@@ -1,0 +1,28 @@
+Web Tech used:
+Javascript
+Jquery Library
+Google Map Api
+CSS3
+HTML5
+SUBLIME 3
+XAMPP
+Google Browser
+
+JQuery
+1. I used select elements to group countries and cities. 
+2. Added jquery script for the selection function
+3. Added "is" class to select all className with is
+4. class name of divs that is hidden should have same className prepend "is" with select option value.
+5. Used slideDown, slideUp, removeclass addClass function to manipulate the hide and show of data.
+
+For JSON and JS:
+1. I manipulated the JSON provided a bit. I make it nested to properly make a groupings for countires and cities.
+
+2. I make a function with parameters such as countries an cities then loop through the json and look for according to the countries or cities to show, and created a variables such as countryName and cityName to go through inside the datas. You can see it on the first column of the divs.
+
+3.And make a variable output to output the divs and data dynamically
+
+For Google MAP APi
+1. I get keys in the Google for the map.
+2. created a css that give height and width of 100% for the div with Id map.
+3. Create an arrays of coordinates calles locations to point each cities and loop through it.When marker are click the address, city and postal code will show.
